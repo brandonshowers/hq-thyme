@@ -5,7 +5,7 @@ import { Dropdown } from "react-bootstrap"
 
 const AppSidebar = ({ className }) => {
   return (
-    <div className={ className } style={{ width: "280px" }}>
+    <div className={ className }>
       <Link to="/" className="text-white text-decoration-none p-0 fs-4">hq:thyme</Link>
       <hr />
       <IconContext.Provider value={{ className: "bi me-2" }}>
