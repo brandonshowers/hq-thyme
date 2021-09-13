@@ -6,6 +6,7 @@ import {
   Row
 } from 'react-bootstrap'
 import { ErrorMessage, Formik } from 'formik'
+import * as Yup from 'yup'
 
 const JobOffersNew = () => {
   return (
@@ -22,7 +23,32 @@ const JobOffersNew = () => {
           specialNotes: "",
           isRemotePosition: false
         }}
+        validationSchema={
+          Yup.object({
+            title: Yup.string()
+              .min(12, "Title must be at least 12 characters long")
+              .max(120, "Title cannot be more than 120 characters")
+              .required("Offer Title is required"),
+            description: Yup.string()
+              .required("Job description is required"),
+            salaryBottom: Yup.string()
+              .required("Salary is required"),
+            positionType: Yup.string()
+              .oneOf(
+                ["full-time", "part-time", "contract"],
+                "Choose a valid position type"
+              )
+              .required("Position type is required"),
+            hiringManager: Yup.string()
+              .oneOf(
+                ["Dan Barrett", "Nick"],
+                "Select a valid hiring manager"
+              )
+              .required("Hiring manager is required"),
+          })
+        }
         onSubmit={( values ) => {
+          console.log( values );
           // Submit logic to follow
         }}
       >
@@ -36,7 +62,6 @@ const JobOffersNew = () => {
             <Form.Group className="mb-3" controlId="jobTitle">
               <Form.Label>Title</Form.Label>
               <Form.Control
-                required
                 type="text"
                 name="title"
                 placeholder="Job Title"
@@ -44,12 +69,15 @@ const JobOffersNew = () => {
                 onBlur={ handleBlur }
                 value={ values.title }
               />
-              <ErrorMessage name="title" component="div" />
+              <ErrorMessage
+                name="title"
+                component="div"
+                className="d-block invalid-feedback"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="jobDescription">
               <Form.Label>Description</Form.Label>
               <Form.Control
-                required
                 as="textarea"
                 name="description"
                 placeholder=""
@@ -58,13 +86,17 @@ const JobOffersNew = () => {
                 onBlur={ handleBlur }
                 value={ values.description }
               />
+              <ErrorMessage
+                name="description"
+                component="div"
+                className="d-block invalid-feedback"
+              />
             </Form.Group>
-            <Row>
+            <Row className="mb-3">
               <span>Salary Range</span>
-              <Form.Group as={ Col } className="mb-3" controlId="salaryBottom">
+              <Form.Group as={ Col } controlId="salaryBottom">
                 <Form.Label>Bottom</Form.Label>
                 <Form.Control
-                  required
                   type="text"
                   name="salaryBottom"
                   placeholder="$104,300"
@@ -73,10 +105,9 @@ const JobOffersNew = () => {
                   value={ values.salaryBottom }
                 />
               </Form.Group>
-              <Form.Group as={ Col } className="mb-3" controlId="salaryTop">
+              <Form.Group as={ Col } controlId="salaryTop">
                 <Form.Label>Top</Form.Label>
                 <Form.Control
-                  required
                   type="text"
                   placeholder="$175,831"
                   onChange={ handleChange }
@@ -84,13 +115,17 @@ const JobOffersNew = () => {
                   value={ values.salaryTop }
                 />
               </Form.Group>
+              <ErrorMessage
+                name="salaryBottom"
+                component="div"
+                className="d-block invalid-feedback"
+              />
             </Row>
-            <Form.Group required className="mb-3" controlId="positionType">
+            <Form.Group className="mb-3" controlId="positionType">
               <Form.Label>Position Type</Form.Label>
               <div>
                 <Form.Check
                   inline
-                  required
                   type="radio"
                   name="positionType"
                   label="Full-time"
@@ -120,6 +155,11 @@ const JobOffersNew = () => {
                   value="contract"
                   />
               </div>
+              <ErrorMessage
+                name="positionType"
+                component="div"
+                className="d-block invalid-feedback"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="hiringManager">
               <Form.Label>Hiring Manager</Form.Label>
@@ -135,11 +175,15 @@ const JobOffersNew = () => {
                 <option value="Dan Barrett">Dan Barrett</option>
                 <option value="Nick">Nick</option>
               </Form.Control>
+              <ErrorMessage
+                name="hiringManager"
+                component="div"
+                className="d-block invalid-feedback"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="specialNotes">
               <Form.Label>Special Notes</Form.Label>
               <Form.Control
-                required
                 type="text"
                 placeholder=""
                 onChange={ handleChange }
