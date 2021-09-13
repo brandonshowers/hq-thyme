@@ -28,7 +28,7 @@ const JobOffers = () => {
           {jobOffersJSON.jobOffers.map((job, index) => (
           <tr key={ job.id }>
             <td>{ job.title }</td>
-            <td>{ job.salaryRange.bottom + " - " + job.salaryRange.top }</td>
+            <td>{ job.salaryBottom + " - " + job.salaryTop }</td>
             <td>{ job.datePosted }</td>
             <td>
               <Dropdown align="end">
