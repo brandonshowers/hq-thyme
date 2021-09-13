@@ -40,6 +40,9 @@ const JobOffers = () => {
                   <Dropdown.Item>
                     <Link className="text-decoration-none" to={ `/job-offers/${ job.id }/edit` }>Edit</Link>
                   </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Link className="text-decoration-none" to="#">Send Offer to Candidate</Link>
+                  </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>
                     <Link className="text-decoration-none text-danger" to={ `/job-offers/${ job.id }/delete` }>Delete</Link>
