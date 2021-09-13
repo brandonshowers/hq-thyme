@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Dropdown, Table } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { BsPlusCircle } from 'react-icons/bs'
@@ -6,6 +6,17 @@ import { Link } from 'react-router-dom'
 import jobOffersJSON from '../../database/job-offers.json'
 
 const JobOffers = () => {
+
+  const [jobOffers, setJobOffers] = useState(JSON.parse(localStorage.getItem("jobOffers")));
+
+  useEffect(() => {
+    if (!localStorage.getItem("jobOffers")) {
+      const jobs = jobOffersJSON.jobOffers;
+      localStorage.setItem("jobOffers", JSON.stringify(jobs));
+      setJobOffers(jobs);
+    }
+  }, [])
+  
   return (
     <React.Fragment>
       <div className="d-flex justify-content-between">
@@ -25,7 +36,7 @@ const JobOffers = () => {
           </tr>
         </thead>
         <tbody>
-          {jobOffersJSON.jobOffers.map((job, index) => (
+          {jobOffers && jobOffers.map((job, index) => (
           <tr key={ job.id }>
             <td>{ job.title }</td>
             <td>{ job.salaryBottom + " - " + job.salaryTop }</td>

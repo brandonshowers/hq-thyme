@@ -7,8 +7,9 @@ import {
 } from 'react-bootstrap'
 import { ErrorMessage, Formik } from 'formik'
 import * as Yup from 'yup'
+import uuid from 'react-uuid'
 
-const JobOffersNew = () => {
+const JobOffersNew = ({ history }) => {
   return (
     <React.Fragment>
       <h2 className="fs-4">Create Job Offer</h2>
@@ -48,8 +49,20 @@ const JobOffersNew = () => {
           })
         }
         onSubmit={( values ) => {
-          console.log( values );
-          // Submit logic to follow
+          const jobs = JSON.parse(localStorage.getItem("jobOffers"));
+          jobs.push({
+            id: uuid(),
+            title: values.title,
+            description: values.description,
+            salaryBottom: values.salaryBottom,
+            salaryTop: values.salaryTop,
+            positionType: values.positionType,
+            hiringManager: values.hiringManager,
+            specialNotes: values.specialNotes,
+            isRemotePosition: values.isRemotePosition
+          });
+          localStorage.setItem("jobOffers", JSON.stringify(jobs));
+          history.push("/job-offers");
         }}
       >
         {({
