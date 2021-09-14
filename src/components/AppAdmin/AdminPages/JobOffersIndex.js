@@ -1,10 +1,14 @@
-import React from 'react'
-import { Dropdown, Table } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Button, Dropdown, Modal, Table } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { BsPlusCircle } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 const JobOffersIndex = () => {
+
+  const [deleteOfferShow, setDeleteOfferShow] = useState(false);
+  const handleDeleteOfferClose = () => setDeleteOfferShow(false);
+  const handleDeleteOfferShow = () => setDeleteOfferShow(true);
 
   const jobOffers = JSON.parse(localStorage.getItem("jobOffers"));
 
@@ -12,6 +16,21 @@ const JobOffersIndex = () => {
     return (job.salaryTop) ?
       `${job.salaryBottom}/yr - ${job.salaryTop}/yr` :
       `${job.salaryBottom}/yr`;
+  }
+
+  const DeleteOfferModal = () => {
+    return (
+      <Modal show={deleteOfferShow} onHide={handleDeleteOfferClose}>
+        <Modal.Header>
+          <Modal.Title>Are you sure you want to delete this offer?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>This action cannot be undone! Candidates with a link to this offer will see an offer closed page. Are you sure you want to delete this offer?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleDeleteOfferClose}>Cancel</Button>
+          <Button variant="danger" onClick={handleDeleteOfferClose}>Delete Offer</Button>
+        </Modal.Footer>
+      </Modal>
+    )
   }
   
   return (
@@ -40,13 +59,13 @@ const JobOffersIndex = () => {
             <td>{new Date(offer.created).toDateString()}</td>
             <td>
               <Dropdown align="end">
-                <Dropdown.Toggle as={'div'}>Actions</Dropdown.Toggle>
+                <Dropdown.Toggle as="div" style={{cursor: "pointer"}}>Actions</Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item as={Link} to={`/jobs/${offer.id}`}>Public Page</Dropdown.Item>
                   <Dropdown.Item as={Link} to={`/admin/job-offers/${offer.id}/edit`}>Edit</Dropdown.Item>
                   <Dropdown.Item as={Link} to="#">Send Offer to Candidate</Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item className="text-danger" as={Link} to={`/admin/job-offers/${offer.id}/delete`}>Delete</Dropdown.Item>
+                  <Dropdown.Item className="text-danger" onClick={handleDeleteOfferShow}>Delete</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </td>
@@ -54,6 +73,7 @@ const JobOffersIndex = () => {
           ))}
         </tbody>
       </Table>
+      <DeleteOfferModal/>
     </React.Fragment>
   )
 }
