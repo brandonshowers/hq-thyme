@@ -1,24 +1,47 @@
 {
-  "company": {
-    "about": "Our mission is to help companies build lasting relationships with candidates and employees. We help teams clearly communicate compensation to candidates and employees through our digital offer and total rewards experiences, powered by our real-time comp and equity data. For people teams: We streamline offer creation and collaboration to run a more effective closing process, better convey total compensation through our digital offer experience, improve retention through our total rewards dashboard for employees, and integrate our real-time comp and equity data to make better offers and plan for the future of their organization. For candidates: We make it easy to understand their offer (digital and fully branded), which includes the role, total compensation, equity, benefits, perks, the team they’ll work with, and the culture of the company. For employees: We make it easy to visualize and understand their total rewards, including how their compensation, ownership, and financial relationship with the company grows and evolves over time.",
-    "employeeSize": "11-50",
-    "industry": "Computer Software",
-    "location": "New York, NY",
-    "name": "hq:thyme",
-    "status": "Actively recruiting"
-  },
   "jobOffers": [
     {
       "id": "9dfc10e2-11a4-49ec-b076-505e5c6e7b86",
       "title": "Senior Frontend Software Engineer",
-      "created": "2021-09-10 13:04:03",
       "hiringManager": "Dan Barrett",
-      "salaryTop": "$155,000",
-      "salaryBottom": "$120,000",
+      "compensationDetails": {
+        "salaryTop": "155000",
+        "salaryBottom": "120000",
+        "equity": "75000",
+        "equityType": "shares",
+        "annualEquityBonus": "5000",
+        "annualEquityBonusType": "shares",
+        "signingBonus": "10000"
+      },
+      "learningOpportunities": [
+        "Mentorship",
+        "Conference fee reimbursement",
+        "Regular pair-programming sessions",
+        "Reimbursement for online courses, books, resources, etc."
+      ],
       "positionType": "Full-time",
+      "positionLocation": "New York, NY",
       "isRemotePosition": "true",
-      "description": "Welcome is looking for US-based remote Senior Frontend Engineers (frontend or full-stack) to help us achieve our goal of making compensation fair and transparent across every industry. About Welcome Our mission is to help companies build lasting relationships with candidates and employees. We help teams clearly communicate compensation, better plan for the future of their organization, and level-set pay equity. We’re building a generational brand and platform for people teams, candidates, and employees to navigate all decisions about their teams, roles, and careers.",
-      "specialNotes": "We can only consider US-based applicants at this time. All candidates must be authorized to work in the U.S. Candidates must be able to work EST/EDT hours."
+      "description": "The Company is looking for US-based remote Senior Frontend Engineers (frontend or full-stack) to help us achieve our goal of making compensation fair and transparent across every industry. About The Company Our mission is to help companies build lasting relationships with candidates and employees. We help teams clearly communicate compensation, better plan for the future of their organization, and level-set pay equity. We’re building a generational brand and platform for people teams, candidates, and employees to navigate all decisions about their teams, roles, and careers.",
+      "specialNotes": "We can only consider US-based applicants at this time. All candidates must be authorized to work in the U.S. Candidates must be able to work EST/EDT hours.",
+      "created": "2021-09-10 13:04:03",
+      "company": {
+        "about": "Our mission is to help companies build lasting relationships with candidates and employees. We help teams clearly communicate compensation to candidates and employees through our digital offer and total rewards experiences, powered by our real-time comp and equity data. For people teams: We streamline offer creation and collaboration to run a more effective closing process, better convey total compensation through our digital offer experience, improve retention through our total rewards dashboard for employees, and integrate our real-time comp and equity data to make better offers and plan for the future of their organization. For candidates: We make it easy to understand their offer (digital and fully branded), which includes the role, total compensation, equity, benefits, perks, the team they’ll work with, and the culture of the company. For employees: We make it easy to visualize and understand their total rewards, including how their compensation, ownership, and financial relationship with the company grows and evolves over time.",
+        "employeeSize": "11-50",
+        "industry": "Computer Software",
+        "location": "New York, NY",
+        "name": "hq:thyme",
+        "status": "Actively recruiting",
+        "culture": {
+          "type": "Team-first Progressive Culture",
+          "details": [
+            "True transparency",
+            "Employees are friends with people in other departments",
+            "Regular team socializing outside of work",
+            "People take pride in their work"
+          ]
+        }
+      }
     }
   ]
 }
