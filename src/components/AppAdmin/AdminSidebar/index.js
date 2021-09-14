@@ -32,11 +32,11 @@ const AdminSidebar = ({ className }) => {
       </IconContext.Provider>
       <hr />
       <Dropdown>
-        <Dropdown.Toggle to="#" as={Link} variant="dark" className="text-decoration-none text-white">
+        <Dropdown.Toggle variant="dark" to="#" className="text-decoration-none text-white">
           <BsPerson/> <strong>Michelle Dockery</strong>
         </Dropdown.Toggle>
-        <Dropdown.Menu variant="dark">
-          <Dropdown.Item to="#" as={Link}>Sign Out</Dropdown.Item>
+        <Dropdown.Menu>
+          <Dropdown.Item to="#">Sign Out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
