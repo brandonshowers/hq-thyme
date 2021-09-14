@@ -59,7 +59,8 @@ const JobOffersNew = ({ history }) => {
             positionType: values.positionType,
             hiringManager: values.hiringManager,
             specialNotes: values.specialNotes,
-            isRemotePosition: values.isRemotePosition
+            isRemotePosition: values.isRemotePosition,
+            created: new Date().toISOString(),
           });
           localStorage.setItem("jobOffers", JSON.stringify(jobs));
           history.push("/job-offers");

@@ -16,6 +16,12 @@ const JobOffers = () => {
       setJobOffers(jobs);
     }
   }, [])
+
+  const salaryDetails = (job) => {
+    return (job.salaryTop) ?
+      `${job.salaryBottom}/yr - ${job.salaryTop}/yr` :
+      `${job.salaryBottom}/yr`;
+  }
   
   return (
     <React.Fragment>
@@ -36,27 +42,27 @@ const JobOffers = () => {
           </tr>
         </thead>
         <tbody>
-          {jobOffers && jobOffers.map((job, index) => (
-          <tr key={ job.id }>
-            <td>{ job.title }</td>
-            <td>{ job.salaryBottom + " - " + job.salaryTop }</td>
-            <td>{ job.datePosted }</td>
+          {jobOffers && jobOffers.map((offer, index) => (
+          <tr key={ offer.id }>
+            <td>{ offer.title }</td>
+            <td>{ salaryDetails(offer) }</td>
+            <td>{ new Date(offer.created).toDateString() }</td>
             <td>
               <Dropdown align="end">
                 <Dropdown.Toggle as={ 'div' }>Actions</Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item>
-                    <Link className="text-decoration-none" to={ `/jobs/${ job.id }` }>Public Page</Link>
+                    <Link className="text-decoration-none" to={ `/jobs/${ offer.id }` }>Public Page</Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                    <Link className="text-decoration-none" to={ `/job-offers/${ job.id }/edit` }>Edit</Link>
+                    <Link className="text-decoration-none" to={ `/job-offers/${ offer.id }/edit` }>Edit</Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
                     <Link className="text-decoration-none" to="#">Send Offer to Candidate</Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>
-                    <Link className="text-decoration-none text-danger" to={ `/job-offers/${ job.id }/delete` }>Delete</Link>
+                    <Link className="text-decoration-none text-danger" to={ `/job-offers/${ offer.id }/delete` }>Delete</Link>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

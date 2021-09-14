@@ -11,20 +11,13 @@
     {
       "id": "9dfc10e2-11a4-49ec-b076-505e5c6e7b86",
       "title": "Senior Frontend Software Engineer",
-      "datePosted": "09/01/2021",
+      "created": "2021-09-10 13:04:03",
       "hiringManager": "Dan Barrett",
-      "salaryTop": "$155,000/yr",
-      "salaryBottom": "$120,000/yr",
+      "salaryTop": "$155,000",
+      "salaryBottom": "$120,000",
       "positionType": "Full-time",
       "isRemotePosition": "true",
       "description": "Welcome is looking for US-based remote Senior Frontend Engineers (frontend or full-stack) to help us achieve our goal of making compensation fair and transparent across every industry. About Welcome Our mission is to help companies build lasting relationships with candidates and employees. We help teams clearly communicate compensation, better plan for the future of their organization, and level-set pay equity. We’re building a generational brand and platform for people teams, candidates, and employees to navigate all decisions about their teams, roles, and careers.",
-      "responsibilities": [
-        "Write high-quality frontend applications in languages like Typescript and Javascript, using ReactJS",
-        "Create accessible, performant and well-tested React components, using tools like React Storybook",
-        "Design and consume modern GraphQL and REST APIs",
-        "Participate in the entire product creation process, including user interviews, design meetings, technical architecture decisions, and resulting implementation.",
-        "Work with other engineers to continually improve our process, tooling, monitoring, and instrumentation"
-      ],
       "specialNotes": "We can only consider US-based applicants at this time. All candidates must be authorized to work in the U.S. Candidates must be able to work EST/EDT hours."
     }
   ]
