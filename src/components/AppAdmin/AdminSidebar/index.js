@@ -3,27 +3,27 @@ import { BsGear, BsHouseDoor, BsPerson, BsTable } from 'react-icons/bs'
 import { IconContext } from "react-icons"
 import { Dropdown } from "react-bootstrap"
 
-const AppSidebar = ({ className }) => {
+const AdminSidebar = ({ className }) => {
   return (
     <div className={ className }>
-      <Link to="/" className="text-white text-decoration-none p-0 fs-4">hq:thyme</Link>
+      <Link to="/admin" className="text-white text-decoration-none p-0 fs-4">hq:thyme</Link>
       <hr />
       <IconContext.Provider value={{ className: "bi me-2" }}>
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <NavLink exact to="/" className="nav-link text-white">
+          <NavLink exact to="/admin" className="nav-link text-white">
             <BsHouseDoor/>
             { " Home " }
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/job-offers" className="nav-link text-white">
+          <NavLink to="/admin/job-offers" className="nav-link text-white">
             <BsTable/>
             { " Job Offers " }
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/settings" className="nav-link text-white">
+          <NavLink to="/admin/settings" className="nav-link text-white">
             <BsGear/>
             { " Settings " }
           </NavLink>
@@ -43,4 +43,4 @@ const AppSidebar = ({ className }) => {
   )
 }
 
-export default AppSidebar
+export default AdminSidebar

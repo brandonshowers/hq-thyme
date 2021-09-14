@@ -3,9 +3,9 @@ import { Dropdown, Table } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { BsPlusCircle } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import jobOffersJSON from '../../database/job-offers.json'
+import jobOffersJSON from '../../../database/job-offers.json'
 
-const JobOffers = () => {
+const JobOffersIndex = () => {
 
   const [jobOffers, setJobOffers] = useState(JSON.parse(localStorage.getItem("jobOffers")));
 
@@ -27,7 +27,7 @@ const JobOffers = () => {
     <React.Fragment>
       <div className="d-flex justify-content-between">
         <h2 className="fs-4">Job Offers</h2>
-        <Link to="/job-offers/new" className="btn btn-primary">
+        <Link to="/admin/job-offers/new" className="btn btn-primary">
           <IconContext.Provider value={{ className: "bi me-2" }}><BsPlusCircle /></IconContext.Provider>
           Create Job Offer
         </Link>
@@ -55,14 +55,14 @@ const JobOffers = () => {
                     <Link className="text-decoration-none" to={ `/jobs/${ offer.id }` }>Public Page</Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                    <Link className="text-decoration-none" to={ `/job-offers/${ offer.id }/edit` }>Edit</Link>
+                    <Link className="text-decoration-none" to={ `/admin/job-offers/${ offer.id }/edit` }>Edit</Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
                     <Link className="text-decoration-none" to="#">Send Offer to Candidate</Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>
-                    <Link className="text-decoration-none text-danger" to={ `/job-offers/${ offer.id }/delete` }>Delete</Link>
+                    <Link className="text-decoration-none text-danger" to={ `/admin/job-offers/${ offer.id }/delete` }>Delete</Link>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -75,4 +75,4 @@ const JobOffers = () => {
   )
 }
 
-export default JobOffers
+export default JobOffersIndex

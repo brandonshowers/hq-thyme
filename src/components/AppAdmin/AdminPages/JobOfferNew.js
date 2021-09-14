@@ -9,7 +9,7 @@ import { ErrorMessage, Formik } from 'formik'
 import * as Yup from 'yup'
 import uuid from 'react-uuid'
 
-const JobOffersNew = ({ history }) => {
+const JobOfferNew = ({ history }) => {
   return (
     <React.Fragment>
       <h2 className="fs-4">Create Job Offer</h2>
@@ -63,7 +63,7 @@ const JobOffersNew = ({ history }) => {
             created: new Date().toISOString(),
           });
           localStorage.setItem("jobOffers", JSON.stringify(jobs));
-          history.push("/job-offers");
+          history.push("/admin/job-offers");
         }}
       >
         {({
@@ -228,4 +228,4 @@ const JobOffersNew = ({ history }) => {
   )
 }
 
-export default JobOffersNew
+export default JobOfferNew
