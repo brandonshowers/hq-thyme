@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Dropdown, Modal, Table } from 'react-bootstrap'
+import { Button, Dropdown, Form, Modal, Table } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { BsPlusCircle } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
@@ -9,6 +9,12 @@ const JobOffersIndex = () => {
   const [deleteOfferShow, setDeleteOfferShow] = useState(false);
   const handleDeleteOfferClose = () => setDeleteOfferShow(false);
   const handleDeleteOfferShow = () => setDeleteOfferShow(true);
+
+  const [sendOfferShow, setSendOfferShow] = useState(false);
+  const handleSendOfferClose = () => setSendOfferShow(false);
+  const handleSendOfferShow = () => setSendOfferShow(true);
+
+  const [currentJobOfferId, setCurrentJobOfferId] = useState();
 
   const jobOffers = JSON.parse(localStorage.getItem("jobOffers"));
 
@@ -28,6 +34,38 @@ const JobOffersIndex = () => {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleDeleteOfferClose}>Cancel</Button>
           <Button variant="danger" onClick={handleDeleteOfferClose}>Delete Offer</Button>
+        </Modal.Footer>
+      </Modal>
+    )
+  }
+
+  const SendOfferModal = () => {
+    return (
+      <Modal show={sendOfferShow} onHide={handleSendOfferClose}>
+        <Modal.Header>
+          <Modal.Title>Send this offer to a candidate</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Enter the email address of the candidate you'd like to send this to and we'll let them know about the exciting news!</p>
+          <Form.Group controlId="candidateEmailAddress">
+            <Form.Label>Email Address</Form.Label>
+            <Form.Control
+              type="text"
+              name="candidateEmailAddress"
+              placeholder="candidate@emailaddress.com"
+            />
+          </Form.Group>
+          <div className="text-center text-muted mt-2">
+            <small className="d-block mb-2">- or -</small>
+            <p>Copy and paste the link below into your custom email.</p>
+            <div className="p-2" style={{ backgroundColor: "#ededed", borderRadius: "5px", fontSize: "13px" }}>
+              http://localhost:3000/jobs/{currentJobOfferId}
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleSendOfferClose}>Cancel</Button>
+          <Button onClick={handleSendOfferClose}>Send</Button>
         </Modal.Footer>
       </Modal>
     )
@@ -63,7 +101,10 @@ const JobOffersIndex = () => {
                 <Dropdown.Menu>
                   <Dropdown.Item as={Link} to={`/jobs/${offer.id}`}>Public Page</Dropdown.Item>
                   <Dropdown.Item as={Link} to={`/admin/job-offers/${offer.id}/edit`}>Edit</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="#">Send Offer to Candidate</Dropdown.Item>
+                  <Dropdown.Item onClick={((e) => {
+                    setCurrentJobOfferId(offer.id);
+                    handleSendOfferShow();
+                  })}>Send Offer to Candidate</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item className="text-danger" onClick={handleDeleteOfferShow}>Delete</Dropdown.Item>
                 </Dropdown.Menu>
@@ -73,7 +114,8 @@ const JobOffersIndex = () => {
           ))}
         </tbody>
       </Table>
-      <DeleteOfferModal/>
+      <SendOfferModal />
+      <DeleteOfferModal />
     </React.Fragment>
   )
 }
