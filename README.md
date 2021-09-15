@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# hq:thyme - The Welcome Frontend Product Exercise (Version: A)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my Welcome Frontend Exercise
 
-## Available Scripts
+I decided to go with [exercise A](https://github.com/pineapplehq/hiring-exercises/blob/master/frontend/instructions.md#exercise-a-creating-an-offer) because I believe it showcases the way I think as a programmer and problem solver. Specifically, I enjoyed the two aspects of this exercise; the platform (admin) side, and the candidate (public) side. It was refreshing and fun to build.
 
-In the project directory, you can run:
+## What I built
 
-### `yarn start`
+My goal from the start was to build something that would be fun to use. The user experience is important to me. It is my opinion that great software is software that is pleasing to the eyes and easy to use. My second motivation was to keep the code as clean as I could with every commit. After all, we developers read code more often than we write it so attention to detail is always top of mind. There are a few areas that I would continue to polish and I have outlined those areas in my ROADMAP.md file.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Okay, moving on!**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To get started, please run `yarn`. Once everything has installed run `yarn start` and you should be good to go from there. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) so you should automatically get a new browser tab opened to [http://localhost:3000](http://localhost:3000). From here, you can view the application.
 
-### `yarn test`
+Below are a few screenshots and descriptions about what you are seeing. Please enjoy!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Job Offers (Admin Views)
 
-### `yarn build`
+The below screens satisfy [these requirements](https://github.com/pineapplehq/hiring-exercises/blob/master/frontend/instructions.md#as-a-hiring-manager-i-want-to).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![Job Offers Index Page](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-job-offers-index.png "Job Offers Index Page")](http://localhost:3000/admin/job-offers)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Here you can see the list of job offers that were created prior to the user logging into the system. From here you would be able to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. view a public offer page.
+2. edit a job offer.
+3. send an offer to a candidate.
+4. delete a job offer.
+5. [create a job offer](http://localhost:3000/admin/job-offers/new).
 
-### `yarn eject`
+#### Job offer actions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Job Offer Actions](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-job-offers-index-actions.png "Job Offer Actions")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Send offer modal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Job Offer Send to Candidate](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-job-offers-send-to-candidate.png "Job Offer Send to Candidate")
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Creating a Job Offer
 
-## Learn More
+[![Creating a Job Offer](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-create-job-offer.png "Creating a Job Offer")](http://localhost:3000/admin/job-offers/new)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Things are a bit busy here on this page. Splitting the form into a multi-step solution would improve the user experience and smooth out the roughness a little.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Job Offer Form Validation](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-create-job-offer-form-validations.png "Job Offer Form Validation")]
 
-### Code Splitting
+A little form validation action.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### The Job Offer (Candidate/Public View)
 
-### Analyzing the Bundle Size
+This screen satisfies [this requirment](https://github.com/pineapplehq/hiring-exercises/blob/master/frontend/instructions.md#as-an-employee-receiving-an-offer-i-want-to).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[![The Job Offer](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-job-offer-landing.png "The Job Offer")](http://localhost:3000/jobs/9dfc10e2-11a4-49ec-b076-505e5c6e7b86)
 
-### Making a Progressive Web App
+The Job Offer page displays all of the attributes required for a valid job offer. There is so much more that can be done on this page. Everything from interactive charts and graphs to help a candidate understand their compensation details. Questions and answers from the candidate to the hiring manager. And more! Outlined in the ROADMAP.md file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Thank You
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for taking the time to read and review this exercise. I am always open to feedback so if you see anything out of place (in a major way or otherwise), have comments (of any kind), or questions (about anything), I am happy to discuss.
