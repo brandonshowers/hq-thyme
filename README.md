@@ -6,7 +6,7 @@ I decided to go with [exercise A](https://github.com/pineapplehq/hiring-exercise
 
 ## What I Built
 
-My goal from the start was to build something that would be fun to use. The user experience is important to me. It is my opinion that great software is software that is pleasing to the eyes and easy to use. My second motivation was to keep the code as clean as I could with every commit. After all, we developers read code more often than we write it so attention to detail is always top of mind. There are a few areas that I would continue to polish and I have outlined those areas in my ROADMAP.md file.
+My goal from the start was to build something that would be fun to use. The user experience is important to me. It is my opinion that great software is software that is pleasing to the eyes and easy to use. My second motivation was to keep the code as clean as I could with every commit. After all, we developers read code more often than we write it so attention to detail is always top of mind. There are a few areas that I would continue to polish and I have outlined those areas in my [ROADMAP.md](https://github.com/brandonshowers/hq-thyme/blob/main/ROADMAP.md) file.
 
 **Okay, moving on!**
 
@@ -52,7 +52,7 @@ This screen satisfies [this requirment](https://github.com/pineapplehq/hiring-ex
 
 [![The Job Offer](https://github.com/brandonshowers/hq-thyme/blob/main/resources/hqthyme-job-offer-landing.png "The Job Offer")](http://localhost:3000/jobs/9dfc10e2-11a4-49ec-b076-505e5c6e7b86)
 
-The Job Offer page displays all of the attributes required for a valid job offer. There is so much more that can be donehere. Everything from interactive charts and graphs to help a candidate understand their compensation details. Questions and answers from the candidate to the hiring manager. And more! Outlined in the ROADMAP.md file.
+The Job Offer page displays all of the attributes required for a valid job offer. There is so much more that can be donehere. Everything from interactive charts and graphs to help a candidate understand their compensation details. Questions and answers from the candidate to the hiring manager. And more! Outlined in the [ROADMAP.md](https://github.com/brandonshowers/hq-thyme/blob/main/ROADMAP.md) file.
 
 ## Thank You
 
