@@ -18,6 +18,9 @@
 | Ready to Begin | **Company Details on Admin Settings Page(s)** | 1 day |
 | Ready to Begin | **Convert JavaScript Codebase to TypeScript** | ??? |
 | Ready to Begin | **Add End-to-End Testing** | ??? |
+| Ready to Begin | **Job Offers Index - Delete Job Offer** | 1/4 day |
+| Ready to Begin | **Job Offers Index - Send Job Offer to Candidate** | ??? |
+| Ready to Begin | **Edit Job Offer** | 1 day |
 | Ready to Begin | **Style Jobs Page** | 1-2 days |
 | Ready to Begin | **Style Homepage** | 1 hour |
 | Ready to Begin | **Introduce Authentication** | ??? |
