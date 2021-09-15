@@ -99,7 +99,7 @@ const JobOffersIndex = () => {
               <Dropdown align="end">
                 <Dropdown.Toggle as="div" style={{cursor: "pointer"}}>Actions</Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item as={Link} to={`/jobs/${offer.id}`}>Public Page</Dropdown.Item>
+                  <Dropdown.Item as={Link} target="_blank" to={`/jobs/${offer.id}`}>Public Page</Dropdown.Item>
                   <Dropdown.Item as={Link} to={`/admin/job-offers/${offer.id}/edit`}>Edit</Dropdown.Item>
                   <Dropdown.Item onClick={((e) => {
                     setCurrentJobOfferId(offer.id);
