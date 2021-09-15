@@ -45,7 +45,7 @@ const JobOffer = ({ match }) => {
         <Container fluid>
           <JobOfferHero className="align-items-center text-center">
             <div>
-              <h3>Congratualtions!</h3>
+              <h3>Congratulations!</h3>
               <strong className="fs-5">The Company has offered you a position to become their new:</strong>
               <JobOfferHeroText>{jobOffer.title}</JobOfferHeroText>
             </div>
