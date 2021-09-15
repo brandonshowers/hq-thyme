@@ -11,16 +11,14 @@ const AppAdmin = () => {
   return (
     <React.Fragment>
       <AdminSidebar className="d-flex flex-column p-3 bg-dark text-white col-xl-2" />
-      <div className="p-3 col-xl-10">
-        <Switch>
-          <Route path="/admin/job-offers/:offerId/edit" component={JobOfferEdit} />
-          <Route path="/admin/job-offers/new" component={JobOfferNew} />
-          <Route path="/admin/job-offers" component={JobOffersIndex} />
-          <Route path="/admin/settings" component={Settings} />
-          <Route path="/admin" component={AdminHome}/>
-          {/* <Router path="*" component={ Error404 } /> */}
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/admin/job-offers/:offerId/edit" component={JobOfferEdit} />
+        <Route path="/admin/job-offers/new" component={JobOfferNew} />
+        <Route path="/admin/job-offers" component={JobOffersIndex} />
+        <Route path="/admin/settings" component={Settings} />
+        <Route path="/admin" component={AdminHome}/>
+        {/* <Router path="*" component={ Error404 } /> */}
+      </Switch>
     </React.Fragment>
   )
 }

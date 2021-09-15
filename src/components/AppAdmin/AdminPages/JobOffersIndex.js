@@ -72,7 +72,7 @@ const JobOffersIndex = () => {
   }
   
   return (
-    <React.Fragment>
+    <div className="col p-3">
       <div className="d-flex justify-content-between">
         <h2 className="fs-4">Job Offers</h2>
         <Link to="/admin/job-offers/new" className="btn btn-primary">
@@ -116,7 +116,7 @@ const JobOffersIndex = () => {
       </Table>
       <SendOfferModal />
       <DeleteOfferModal />
-    </React.Fragment>
+    </div>
   )
 }
 

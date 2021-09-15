@@ -11,32 +11,23 @@ const AdminSidebar = ({ className }) => {
       <IconContext.Provider value={{ className: "bi me-2" }}>
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <NavLink exact to="/admin" className="nav-link text-white">
-            <BsHouseDoor/>
-            { " Home " }
-          </NavLink>
+          <NavLink exact to="/admin" className="nav-link text-white"><BsHouseDoor/>{ " Home " }</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/admin/job-offers" className="nav-link text-white">
-            <BsTable/>
-            { " Job Offers " }
-          </NavLink>
+          <NavLink to="/admin/job-offers" className="nav-link text-white"><BsTable/>{ " Job Offers " }</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/admin/settings" className="nav-link text-white">
-            <BsGear/>
-            { " Settings " }
-          </NavLink>
+          <NavLink to="/admin/settings" className="nav-link text-white"><BsGear/>{ " Settings " }</NavLink>
         </li>
       </ul>
       </IconContext.Provider>
       <hr />
       <Dropdown>
-        <Dropdown.Toggle variant="dark" to="#" className="text-decoration-none text-white">
+        <Dropdown.Toggle variant="dark" className="text-decoration-none text-white">
           <BsPerson/> <strong>Michelle Dockery</strong>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item to="#">Sign Out</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/">Sign Out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>

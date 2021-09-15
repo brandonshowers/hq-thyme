@@ -40,6 +40,7 @@ const JobOffer = ({ match }) => {
 
   return (
     <React.Fragment>
+      {console.log(jobOffer)}
       {!isLoading && jobOffer ? (
         <Container fluid>
           <JobOfferHero className="align-items-center text-center">
@@ -106,6 +107,7 @@ const JobOffer = ({ match }) => {
                       <li className="list-group-item"><strong>Location:</strong> {jobOffer.company.location}</li>
                     </JobOfferCard>
                   </div>
+                  {jobOffer.company.culture && (
                   <div className="col">
                     <JobOfferCard title={jobOffer.company.culture.type}>
                       {jobOffer.company.culture.details.map((cultureDeet, index) => (
@@ -113,6 +115,7 @@ const JobOffer = ({ match }) => {
                       ))}
                     </JobOfferCard>
                   </div>
+                  )}
                 </div>
               </div>
             </Col>
