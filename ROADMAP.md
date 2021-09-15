@@ -20,3 +20,4 @@
 | Ready to Begin | **Add End-to-End Testing** | ??? |
 | Ready to Begin | **Style Jobs Page** | 1-2 days |
 | Ready to Begin | **Style Homepage** | 1 hour |
+| Ready to Begin | **Introduce Authentication** | ??? |
